@@ -1,0 +1,6 @@
+<!--pages/home/home.wxml-->
+<import src="template/template.wxml"/>
+<view>
+  <template is="header"></template>
+  <home winH="{{winH}}" id="pcj"/>
+</view>

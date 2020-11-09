@@ -1,0 +1,20 @@
+<template name="booking">
+  <view class="booking">
+    <view class="booking_title">
+      <view class="prefecture">拼团专区</view>
+      <view class="benefit">拼着买更实惠</view>
+    </view>
+    <view class="booking_items">
+      <scroll-view scroll-x="true">
+        <view class="_items">
+          <view class="booking_item" wx:for="{{bookingList}}" wx:key="index">
+            <image src="{{item.goods_thumb}}" class="booking_item_img" mode="widthFix"></image>
+            <view class="booking_item_name">{{item.goods_name}}</view>
+            <view class="booking_item_price">{{item.team_price}}</view>
+            <view class="booking_item_p">{{item.shop_price}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</template>

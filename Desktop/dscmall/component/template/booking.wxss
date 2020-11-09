@@ -1,0 +1,79 @@
+.booking{
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 20rpx 20rpx 0;
+  padding: 20rpx;
+}
+.booking_title{
+  height: 102rpx;
+  width: 100%;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #ccc;
+}
+.prefecture{
+  display: inline-block;
+  font-size: 32rpx;
+  line-height: 40rpx;
+}
+.benefit{
+  display: inline-block;
+  line-height: 40rpx;
+  color: #ccc;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.booking_items{
+  height: 380rpx;
+  margin-top: 20rpx;
+}
+._items{
+  width: 100%;
+  height: 380rpx;
+  margin-top: 20rpx;
+  display: inline-flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+.booking_item{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 10rpx;
+}
+.booking_item_img{
+  width: 100%;
+}
+.booking_item_name{
+  width: 100%;
+  padding: 0 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.booking_item_price{
+  color: #f00;
+  font-size: 24rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+.booking_item_price::before{
+  content: "¥";
+  color: #f00;
+  font-size: 24rpx;
+}
+.booking_item_p{
+  font-size: 28rpx;
+  color: #ccc;
+  text-decoration: line-through;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+}

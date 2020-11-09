@@ -1,0 +1,35 @@
+.handpick_wrap {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.handpick_wrap .handpick_item {
+  width: 48%;
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.handpick_img {
+  width: 100%;
+}
+
+.handpick_name {
+  font-weight: bold;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  height: 80rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.handpick_price{
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #f00;
+}

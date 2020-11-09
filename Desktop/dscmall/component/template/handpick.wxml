@@ -1,0 +1,9 @@
+<template name="handpick">
+  <view class="handpick_wrap" style="height:{{winH}}px">
+    <view class="handpick_item" wx:for="{{handpickList}}" wx:key="index">
+      <image class="handpick_img" src="{{item.goods_thumb}}" mode="aspectFit"></image>
+      <view class="handpick_name">{{item.title}}</view>
+      <view class="handpick_price">{{item.shop_price_formated}}</view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "商品列表",
+    "navigationBarTextStyle":"black"
+
+}

@@ -1,0 +1,26 @@
+<!--pages/find/find.wxml-->
+<!-- 顶部状态栏 -->
+<view style="height:40rpx"></view>
+<!-- 导航栏 -->
+<view class="find_nav">
+  <view wx:for="{{navList}}" wx:key="index" data-index="{{index}}"
+    class="find_nav_items {{find_index == index ? 'active' : ''}}">
+    <view class="find_nav_item">{{item.title}}</view>
+  </view>
+</view>
+<!-- 内容栏 -->
+
+<scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="crolltolower">
+  <view class="find_container">
+    <view class="find_item" wx:for="{{findList}}" wx:key="index" data-commentid="{{item.comment_id}}" bindtap="todetail">
+      <image src="{{item.img}}" class="find_item_src"></image>
+      <view class="find_item_title">{{item.goods_name}}</view>
+      <view class="find_item_else">
+        <image class="img" mode="heightFix" src="{{item.user_picture}}"></image>
+        <view class="user_name">{{item.user_name}}</view>
+        <text class="iconfont icon-icon-test eyes"></text>
+        <view class="num">{{item.dis_browse_num}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

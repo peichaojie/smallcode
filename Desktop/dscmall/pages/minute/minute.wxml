@@ -1,0 +1,158 @@
+<!--pages/minute/minute.wxml-->
+<import src="/wxParse/wxParse.wxml" />
+<!-- 顶部导航栏 -->
+<view class="minute_bar" style="height:{{navH}}rpx">
+  <view class="minute_nav" style="top:{{navH - 88}}rpx;background:rgba(255, 0, 0,{{alpha}})">
+    <view class="minute_nav_item">
+      <text class="iconfont icon-zuojiantou" bindtap="back"></text>
+      <text class="iconfont icon-fenlei"></text>
+    </view>
+    <view class="minute_nav_item {{navIndex == index ? 'active' :''}}" wx:for="{{nav}}" wx:key="index" data-index="{{index}}" bindtap="transfor" data-id="minute{{index}}">{{item}}</view>
+    <view class="minute_nav_item">
+      <text class="iconfont icon-fenxiang_2"></text>
+    </view>
+  </view>
+</view>
+<!-- 内容区 -->
+<view style="height:{{winH}}px;margin-top:{{navH - 88}}rpx" class="minute_container">
+  <scroll-view style="height:{{winH}}px" scroll-y="true" bindscroll="isScrollFn" scroll-into-view="{{goId}}">
+    <!-- 商品 -->
+    <view id="minute0">
+      <view class="goods_img">
+        <swiper autoplay='true' indicator-dots='true' indicator-color='#ff0' indicator-active-color='#f00'
+          interval='3000' duration='500' circular='true'>
+          <swiper-item wx:for="{{minuteData.gallery_list}}" wx:key="index">
+            <image src="{{item.img_original}}"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <!-- 价格 -->
+      <view class="minute_price minute_common">
+        <text class="minute_price1">{{minuteData.membership_card_discount_price}}</text>
+        <text class="minute_price2">{{minuteData.market_price}}</text>
+      </view>
+      <!-- 产品介绍 -->
+      <view class="minute_pad minute_pro">{{minuteData.goods_name}}</view>
+      <!-- 产品销量 -->
+      <view class="minute_pad minute_Sales">
+        <view class="Sales">
+          <view class="Sales_num">累计销量{{minuteData.sales_volume}}</view>
+          <view class="Sales_repertory">库存{{minuteData.goods_number}}</view>
+          <view class="Sales_address">{{minuteData.basic_info.province_name}}{{minuteData.basic_info.city_name}}</view>
+        </view>
+      </view>
+      <!-- 产品服务 -->
+      <view class="minute_serve">
+        <view class="minute_pad2 integral">
+          <view class="integral_title">赠送积分:</view>
+          <view class="integral_">{{minuteData.give_integral}}积分:</view>
+        </view>
+        <view class="minute_pad2 serves">
+          <view class="serves_title">服务:</view>
+          <view class="serve_">正品服务 七天无理由退换 闪速配送</view>
+        </view>
+      </view>
+      <!-- 配送 -->
+      <view class="distribution">
+        <view class="minute_pad2 send" bindtap="sendCity">
+          <view>送至:</view>
+          <view>{{region[0]}}{{region[1]}}{{region[2]}}</view>
+        </view>
+        <view class="minute_pad2 post">
+          <view>运费:</view>
+          <view>{{minuteData.get_seller_shop_info.open_community_post}}</view>
+        </view>
+      </view>
+      <!-- 已选 -->
+      <view class="selected" bindtap="selectedFn">
+        <view class="minute_pad2 select">
+          <view class="haven_select">已选</view>
+          <view class="selected_num">{{detailNum}}个</view>
+        </view>
+      </view>
+    </view>
+    <!-- 详情 -->
+    <view id="minute1">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      <!-- <view>{{minuteData.desc_mobile}}</view> -->
+    </view>
+    <!-- 评论 -->
+    <view id="minute2">
+      <view class="maylike">猜你喜欢</view>
+      <view class="youlike">
+        <view class="like" wx:for="{{likeList}}" wx:key="index" class="like_item">
+          <view class="like_img_box">
+            <view class="img_box">
+              <image src="{{item.goods_thumb}}" class="like_img"></image>
+            </view>
+          </view>
+          <view class="like_title">{{item.goods_name}}</view>
+          <view class="like_price">{{item.shop_price}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 底部加入购物车 -->
+<view class="add_cart">
+  <view class="kf">
+    <view class="iconfont icon-kefu"></view>
+    <view>客服</view>
+  </view>
+  <view class="sc">
+    <view class="iconfont icon-shoucang"></view>
+    <view>收藏</view>
+  </view>
+  <view class="gwc" bindtap="toCart">
+    <view class="iconfont icon-gouwuche-"></view>
+    <view>购物车</view>
+  </view>
+  <view class="add_gwc">加入购物车</view>
+  <view class="buy_now">立即购买</view>
+</view>
+<!-- 选择地址 -->
+<view style="height:{{scrH}}px" class="screen" wx:if="{{addflag}}">
+  <view class="seclet_sendadd">
+    <view class="seclet_sendadd_title">
+      <view class="sendto">配送至</view>
+      <view class="iconfont icon-iconset0487 close"></view>
+    </view>
+    <view class="changecity">
+      <picker mode="region" value="{{region}}" custom-item="{{customItem}}" bindchange="bindRegionChange">
+        <view class="picker">
+          当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
+
+  </view>
+</view>
+<!-- 选择数量 -->
+<view class="changeselect" style="height:{{scrH}}px" wx:if="{{detailflag}}">
+  <view class="minute_goods_detail" animation="{{animationData}}">
+    <view class="minute_goods_detail_header">
+      <view class="goods_detail_img">
+        <image src="https://x.dscmall.cn/storage/images/202008/goods_img/1153_G_1598580446572.jpg"></image>
+      </view>
+      <view class="goods_detail_pro">
+        <view class="closed" bindtap="closed">关闭</view>
+        <view class="goods_detail_pro_title">{{minuteData.goods_name}}</view>
+        <view class="goods_detail_pro_price">{{minuteData.cost_price}}</view>
+        <view class="goods_detail_pro_repertory">库存: {{minuteData.goods_number}}</view>
+      </view>
+    </view>
+    <!-- 选择数量 -->
+    <view class="detail_number">
+      <view>数量</view>
+      <view class="jiajian">
+        <view class="jian" bindtap="jianNum">-</view>
+        <input type="text" value="{{detailNum}}" bindblur="monitor"/>
+        <view class="jia" bindtap="jiaNum">+</view>
+      </view>
+    </view>
+    <view class="control_fn">
+      <view class="tobuy">立即购买</view>
+      <view class="tocart" bindtap="addCart">加入购物车</view>
+    </view>
+  </view>
+</view>

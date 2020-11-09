@@ -1,0 +1,9 @@
+<template name="hot">
+  <view class="hot_wrap">
+    <image src="../../images/hot.png" class="hot_img" mode="aspectFit"></image>
+    <swiper class="hot_list" autoplay="true" interval="3000" duration="500" circular="true" vertical="true" easing-function="linear">
+      <swiper-item class="hot_item" wx:for="{{hotList}}" wx:key="index">{{item}}</swiper-item>      
+    </swiper>
+    <image class="toright" src="../../images/toright.png"></image>
+  </view>
+</template>

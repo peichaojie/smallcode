@@ -1,0 +1,10 @@
+<template name="skill">
+  <swiper class="skill">
+    <swiper-item class="items" wx:for="{{goods}}" wx:key="index">
+      <view class="box" wx:for="{{item.list}}" wx:for-item="goods" wx:for-index="id" wx:key="id">
+        <image src="{{goods.imgsrc}}" class="img" mode="widthFix"></image>
+        <text class="name">{{goods.title}}</text>
+      </view>
+    </swiper-item>
+  </swiper>
+</template>

@@ -1,0 +1,35 @@
+<!-- 顶部搜索框 -->
+<view class="cate_header">
+  <text class="cate_icon iconfont icon-zuojiantou" bindtap="back"></text>
+  <view class="cate_input">
+    <view class="cate_in"></view>
+    <text class="iconfont cate_find icon-sousuo"></text>
+  </view>
+</view>
+<!-- 下面内容 -->
+<view class="cate_container" style="height:{{cateH}}px">
+  <!-- 左侧list -->
+  <view class="cate_lists">
+    <view wx:for="{{cate_list}}" wx:key = "index" class="cate_list {{cateindex == index ? 'active' : ''}}" 
+    bindtap="cateIndex" data-index="{{index}}" data-catid = "{{item.cat_id}}" data-adimgsrc="{{item.touch_catads}}">
+      <view class="cate_name">{{item.cat_name}}</view>
+    </view>
+  </view>
+  <!-- 右侧内容 -->
+  <view class="cate_list_items">
+    <scroll-view style="height:{{cateH}}px" scroll-y="true" scroll-top="{{cate_y}}px" bindscrolltolower="crolltolower">
+      <view class="catalog">
+        <view class="catalog_ad">
+          <image src="{{adimgsrc}}"></image>
+        </view>
+        <view class="catalog_item" wx:for="{{cidList}}" wx:key="index">
+          <view class="catalog_title">{{item.cat_name}}</view>
+          <view class="catalog_goods" wx:for="{{item.child}}" wx:for-index="cidindex" wx:key="cidindex" wx:for-item="ciditem" data-catid="{{ciditem.cat_id}}" bindtap="togoodslist">
+            <image src="{{ciditem.touch_icon}}"></image>
+            <text>{{ciditem.cat_name}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

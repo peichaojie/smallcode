@@ -1,0 +1,34 @@
+.hot_wrap{
+  border-top: 2rpx solid #efefef;
+  height: 88rpx;
+  margin: 0 20rpx;
+  background-color: #fff;
+  border-radius: 0 0 10rpx 10rpx;
+}
+.hot_wrap{
+  padding: 20rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.hot_img{
+  width: 20%;
+  height: 88rpx;
+}
+.toright{
+  width: 40rpx;
+  height: 40rpx;
+}
+.hot_list{
+  padding-left: 20rpx;
+  height: 48rpx;
+  width: calc( 80% - 60rpx );
+  box-sizing: border-box;
+}
+.hot_item{
+  line-height: 48rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

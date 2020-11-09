@@ -1,0 +1,26 @@
+/* pages/mine/mine.wxss */
+.mine_swiper{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mask{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.login{
+  margin-top: 200rpx;
+}
+.mine_userinfo image{ 
+  width: 400rpx;
+  height: 400rpx;
+}

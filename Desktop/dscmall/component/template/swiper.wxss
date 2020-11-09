@@ -1,0 +1,13 @@
+.swiper_ad{
+  box-sizing: border-box;
+  height: 244rpx;
+  padding: 0 20rpx;
+}
+.swiper_ad-item{
+  width: 100%;
+  height: 244rpx;
+}
+.swiper_ad-item image{
+  width: 100%;
+  height: 244rpx;
+}

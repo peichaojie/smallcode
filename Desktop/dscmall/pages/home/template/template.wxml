@@ -1,0 +1,11 @@
+<template name="header">
+  <view class="header">
+    <view class="header-input">
+      <input type="text" placeholder="搜索商品名称"/>
+      <image src="../../images/find1.png" class="finder"></image>
+    </view>
+    <view class="message">
+      <image src="../../images/message.png"></image>
+    </view>
+  </view>
+</template>

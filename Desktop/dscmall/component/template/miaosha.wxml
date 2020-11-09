@@ -1,0 +1,36 @@
+<template name="miaosha">
+  <view class="miaosha">
+    <view class="limit">
+      <image mode="aspectFit" src="../../images/miaosha.png"></image>
+      <view class="timer">
+        距离结束还剩: <text class="timer-box">{{hh}}</text><i class="timer_">:</i><text class="timer-box">{{mm}}</text><i
+          class="timer_">:</i><text class="timer-box">{{ss}}</text>
+      </view>
+    </view>
+    <view class="miaoshalist">
+      <view wx:for="{{miaoshaList}}" wx:key="index" class="mscategory {{index == clickid ? 'active' :''}}"
+        data-index="{{index}}" bindtap="changeClickid">
+        <view class="mstimer">{{item.timer}}</view>
+        <view wx:if="{{show == item.id}}" class="msactive">{{item.active1}}</view>
+        <view wx:else class="msactive">{{item.active2}}</view>
+      </view>
+    </view>
+
+    <view class="ms_list">
+      <scroll-view scroll-x="true" style="height:418rpx">
+        <view class="ms_list_wrap">
+          <view class="ms_list_item" wx:for="{{msdatalist}}" wx:key="index">
+            <image src="{{item.goods_thumb}}" class="ms_list_item_img"></image>
+            <view class="ms_list_item_title">{{item.goods_name}}</view>
+            <view class="ms_list_item_price">{{item.sec_price_formated}}</view>
+            <view class="ms_list_item_noprice">{{item.market_price}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="skill_more" bindtap="skillmore">
+      秒杀更多商品
+    </view>
+
+  </view>
+</template>

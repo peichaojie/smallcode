@@ -1,0 +1,81 @@
+<!--pages/detail/detail.wxml-->
+<view class="dedail_header">
+  <view class="user_info">
+    <image src="{{info.user_picture}}"></image>
+    <view class="ago">
+      <view class="user_name">{{info.user_name}}</view>
+      <view class="date">{{info.add_time_formated}}</view>
+    </view>
+  </view>
+  <view class="share iconfont icon-fenxiang_2"></view>
+</view>
+<scroll-view style="height:{{winH}}px;" scroll-y="true">
+  <view class="detail_container">
+    <view class="goods_imgs">
+      <swiper class="swiper" autoplay="true" interval="3000" duration="600" circular="true" bindchange="changeIndex">
+        <swiper-item class="swiper_item" wx:for="{{info.goods_gallery}}" wx:key="index">
+          <image src="{{item}}"></image>
+        </swiper-item>
+      </swiper>
+      <view class="numbers">
+        <text>{{num}}/{{nums}}</text>
+      </view>
+    </view>
+    <view class="produce">
+      {{info.content}}
+    </view>
+    <view class="recommend">
+      <view class="img">
+        <image src="{{info.goods_thumb}}"></image>
+      </view>
+      <view class="recommend_info">
+        <text class="recommend_info_name">{{info.goods_name}}</text>
+        <view class="price_box">
+          <text class="reality">{{info.shop_price}}</text>
+          <text class="original">{{info.market_price}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="comment">
+      <view class="about">相关评论</view>
+      <view class="comments">
+        <view class="comments_all">共{{comment.length}}条评论</view>
+        <view class="comment_list" wx:for="{{comment}}" wx:key="index">
+          <view class="comments_img">
+            <image src="{{item.user_picture}}"></image>
+          </view>
+          <view class="comments_">
+            <view class="comments_name">
+              <text class="names">{{item.user_name}}</text>
+              <text wx:if="{{item.user_type == 2}}" class="merchant">商家</text>
+            </view>
+            <view class="answer">
+              <text class="answer_ctx">{{item.content}}</text>
+              <text class="answer_date">{{item.add_time_formated}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="nomore">
+      没有更多了
+    </view>
+    <view style="height:126rpx"></view>
+    <view class="say">
+      <view wx:if="{{flag}}" class="says">
+        <view class="say_box">
+          <input type="text" />
+          <view class="mysay">
+            <text class="iconfont icon-shuxie"></text>
+            说点什么
+          </view>
+        </view>
+        <view class="say_func">
+          <view class="dianzan"></view>
+          <view class="pinglun"></view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</scroll-view>

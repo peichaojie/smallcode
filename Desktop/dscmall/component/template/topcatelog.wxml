@@ -1,0 +1,11 @@
+<template name="topcatelog">
+  <view class="topcatelog">
+    <view class="topcatelog_item" wx:for="{{categoryList}}" wx:key="index">
+      <view class="img">
+        <image src="{{item.touch_icon}}"></image>
+      </view>      
+      <text class="name">{{item.cat_name}}</text>
+    </view>
+
+  </view>
+</template>

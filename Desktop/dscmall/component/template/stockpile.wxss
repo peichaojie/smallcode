@@ -1,0 +1,12 @@
+.stockpilebox{
+  padding: 20rpx;
+  border-radius: 10rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.stockpilebox image{
+  background-color: #fff;
+  border-radius: 10rpx;
+  width: 100%;
+  
+}

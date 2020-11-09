@@ -1,0 +1,56 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/category/category",
+    "pages/find/find",
+    "pages/home/home",
+    "pages/gooddlist/gooddlist",
+    "pages/minute/minute",
+    "pages/cart/cart",
+    "pages/mine/mine",
+    "pages/detail/detail",
+    "pages/skill/skill",
+    "pages/logs/logs"
+   
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+    
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "navigationBarBackgroundColor":"#fff",
+    "selectedColor":"#d81e06",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home-active.png"
+    },{
+      "pagePath": "pages/category/category",
+      "text": "分类",
+      "iconPath": "images/category.png",
+      "selectedIconPath": "images/category-active.png"
+    },{
+      "pagePath": "pages/find/find",
+      "text": "发现",
+      "iconPath": "images/find.png",
+      "selectedIconPath": "images/find-active.png"
+    },{
+      "pagePath": "pages/cart/cart",
+      "text": "购物车",
+      "iconPath": "images/cart.png",
+      "selectedIconPath": "images/cart-active.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text": "我",
+      "iconPath": "images/person.png",
+      "selectedIconPath": "images/person-active.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

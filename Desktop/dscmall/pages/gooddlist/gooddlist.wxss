@@ -1,0 +1,212 @@
+/* pages/gooddlist/gooddlist.wxss */
+.goodslist_header{
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 2rpx solid #ccc;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.goodslist_input{
+  width: 85%;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.goodslist_input .box{
+  width: 100%;
+  height: 80%;
+  margin-left: 60rpx;
+  border: 2rpx solid #333;
+  border-radius: 35rpx;
+  position: relative;
+}
+.goodslist_input .box .iconfont{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  text-align: start;
+  line-height: 60rpx;
+  color: #333;
+  font-size: 44rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.goodlist_change{
+  width: 15%;
+  height: 100%;
+}
+.goodlist_change .iconfont{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 86rpx;
+  text-align: center;
+}
+.nav_select{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.nav_select_item{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+._item{
+  font-size: 26rpx;
+  color: #333;
+}
+._item_icon{
+  font-size: 22rpx;
+  margin: 0 10rpx;
+  color: #333;
+}
+.nav_select_item.active ._item,
+.nav_select_item.active ._item_icon{
+  color: #f92028;
+}
+
+
+.goodslist_list{
+  margin-bottom: 20rpx;
+  padding: 0 12rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #ebe6e6;
+}
+.goodslist_list .goodslist_list_item{
+  padding-top: 12rpx;
+  box-sizing: border-box;
+  width: 50%;
+
+}
+.goodslist_list .goodslist_list_item:nth-child(2n-1){
+  padding-right: 6rpx;
+}
+.goodslist_list .goodslist_list_item:nth-child(2n){
+  padding-left: 6rpx;
+}
+.goodslist_list .goodslist_list_item_img{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+.goodslist_list .goodslist_list_item_img image{
+  width: 357rpx;
+  height: 357rpx;
+}
+.goodslist_list .goodslist_list_item_info{
+  box-sizing: border-box;
+  padding: 16rpx;
+  background-color: #fff;
+}
+.goodslist_list .goodslist_list_item_info .produ{
+  height: 76rpx;
+  line-height: 38rpx;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-weight: 500;
+}
+.goodslist_list .pri{
+  padding: 12rpx 0 16rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: rgb(242, 14, 40);
+}
+.goodslist_list .gobuy,
+.other .gobuy{
+  width: 100%;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.goodslist_list .goshop,
+.other .goshop{
+  background-color: #fef0f0;
+    padding: 2rpx 10rpx;
+    border-radius: 4rpx;
+    color: #f92028;
+    font-size: 26rpx;
+  font-size: 20rpx;
+}
+.goodslist_list .havedbuy,
+.other .havedbuy{
+  color: #999;
+    margin-left: 12rpxm;
+    font-size: 24rpx;
+  font-size: 20rpx;
+}
+.goodslist_list .buy,
+.other .buy{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  color: #f92028;
+}
+
+.other{
+  padding: 0 14rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #ebe6e6;
+}
+.other_item{
+  width: 100%;
+  padding: 16rpx;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.other_item_img{
+  width: 180rpx;
+  height: 180rpx;
+  border: 2rpx solid #f1f1f1;
+  float: left;
+}
+.other_item_img image{
+  width: 100%;
+  height: 100%;
+}
+.other_info{
+  margin-left: 212rpx;
+  padding: 4rpx 0;
+  position: relative;
+}
+.other_info_tit{
+  height: 76rpx;
+  line-height: 38rpx;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-weight: 500;
+}
+.other_info_price{
+  padding: 12rpx 0 16rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: rgb(242, 14, 40);
+}

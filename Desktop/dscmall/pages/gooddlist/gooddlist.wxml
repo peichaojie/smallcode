@@ -1,0 +1,78 @@
+<!--pages/gooddlist/gooddlist.wxml-->
+<scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="scrolltolower">
+  <!-- 搜索框 -->
+  <view class="goodslist_header">
+    <view class="goodslist_input">
+      <view class="box">
+        <text class="iconfont icon-sousuo"></text>
+      </view>
+    </view>
+    <view class="goodlist_change" bindtap="changeList">
+      <!-- 点击右上角切换下面显示内容的样式 -->
+      <text class="iconfont icon-fenlei" wx:if="{{listStyle}}"></text>
+      <text wx:else class="iconfont icon-fenlei1"></text>
+    </view>
+  </view>
+  <!-- 筛选导航栏 -->
+  <view class="nav_select">
+    <view class="nav_select_item {{navIndex == 1 ? 'active' :''}}" data-navIndex="1" bindtap="changeNavIndex">
+      <text class="_item">综合</text>
+      <text wx:if="{{synthesis}}" class="_item_icon iconfont icon-xiangxiajiantoushixin"></text>
+      <text wx:else class="_item_icon iconfont icon-zhcc_xiangshangjiantou"></text>
+    </view>
+    <view class="nav_select_item {{navIndex == 2 ? 'active' :''}}" data-navIndex="2" bindtap="changeNavIndex">
+      <text class="_item">新品</text>
+    </view>
+    <view class="nav_select_item {{navIndex == 3 ? 'active' :''}}" data-navIndex="3" bindtap="changeNavIndex">
+      <text class="_item">销量</text>
+    </view>
+    <view class="nav_select_item {{navIndex == 4 ? 'active' :''}}" data-navIndex="4" bindtap="changeNavIndex">
+      <text class="_item">价格</text>
+      <text wx:if="{{price}}" class="_item_icon iconfont icon-xiangxiajiantoushixin"></text>
+      <text wx:else class="_item_icon iconfont icon-zhcc_xiangshangjiantou"></text>
+    </view>
+    <view class="nav_select_item {{navIndex == 5 ? 'active' :''}}" data-navIndex="5" bindtap="changeNavIndex">
+      <text wx:if="true" class="_item_icon iconfont icon-shaixuan"></text>
+      <text wx:else class="_item_icon icon-shaixuan1"></text>
+      <text class="_item">筛选</text>
+    </view>
+  </view>
+  <!-- 商品列表 -->
+  <view wx:if="{{listStyle}}">
+    <view class="goodslist_list">
+      <view class="goodslist_list_item" wx:for="{{goodsListData}}" wx:key="index" data-goodsid="{{item.goods_id}}" bindtap="tominute">
+        <view class="goodslist_list_item_img">
+          <image src="{{item.goods_thumb}}"></image>
+        </view>
+        <view class="goodslist_list_item_info">
+          <view class="produ">{{item.goods_name}}</view>
+          <view class="pri">{{item.shop_price_formated}}</view>
+          <view class="gobuy">
+            <view class="goshop">进店</view>
+            <text class="havedbuy">{{item.sale}}人已购买</text>
+            <view class="buy iconfont icon-icon--"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="other">
+      <view class="other_item" wx:for="{{goodsListData}}" wx:key="index" data-goodsid="{{item.goods_id}}" bindtap="tominute">
+        <view class="other_item_img">
+          <image src="{{item.goods_thumb}}"></image>
+        </view>
+        <view class="other_info">
+          <view class="other_info_tit">{{item.goods_name}}</view>
+          <view class="other_info_price">{{item.shop_price_formated}}</view>
+          <view class="gobuy">
+            <view class="goshop">进店</view>
+            <text class="havedbuy">{{item.sale}}人已购买</text>
+            <view class="buy iconfont icon-icon--"></view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,81 @@
+<!--component/home/home.wxml-->
+<import src="../template/swiper.wxml" />
+<import src="../template/topcatelog.wxml" />
+<import src="../template/band.wxml" />
+<import src="../template/skill.wxml" />
+<import src="../template/fashion_hot.wxml" />
+<import src="../template/stockpile.wxml" />
+<import src="../template/handpick.wxml" />
+<import src="../template/miaosha.wxml" />
+<import src="../template/booking.wxml"/>
+<scroll-view scroll-x="true" scroll-left="{{oleft}}rpx">
+  <view class="nav-s">
+    <view wx:for="{{navlist}}" class="nav-items {{navIndex == index ? 'active' : ''}}" wx:key="index"
+      data-index="{{index}}" bindtap="changeItem">{{item.title}}</view>
+  </view>
+</scroll-view>
+<scroll-view scroll-y="true" style="height:{{winH}}px">
+  <swiper bindchange="swiperItem" current="{{currentIndex}}" style="min-height:{{winH}}px;background-color:#efefef">
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+        <template is="swiper" data="{{swiperimg:swiperimg,currentad:currentad}}"></template>
+        <template is="skill" data="{{goods:goods}}"></template>
+        <template is="hot" data="{{hotList}}"></template>
+        <template is="stockpile"></template>
+        <template is="miaosha" data="{{hh,mm,ss,miaoshaList,clickid,show,msdatalist}}"></template>
+        <template is="booking" data="{{bookingList}}"></template>
+        <template is="handpick" data="{{handpickList:handpickList,winH:winH}}"></template>
+        
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+        <template is="topcatelog" data="{{categoryList:categoryList.category}}"></template>
+        <template is="band" data="{{list:categoryList.brand}}"></template>
+        <template is="handpick" data="{{handpickList:handpickList,winH:winH}}"></template>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+        <template is="topcatelog" data="{{categoryList:categoryList.category}}"></template>
+        <template is="band" data="{{list:categoryList.brand}}"></template>
+        <template is="handpick" data="{{handpickList:handpickList,winH:winH}}"></template>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+        <template is="topcatelog" data="{{categoryList:categoryList.category}}"></template>
+        <template is="band" data="{{list:categoryList.brand}}"></template>
+        <template is="handpick" data="{{handpickList:handpickList,winH:winH}}"></template>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+        <template is="topcatelog" data="{{categoryList:categoryList.category}}"></template>
+        <template is="band" data="{{list:categoryList.brand}}"></template>
+        <template is="handpick" data="{{handpickList:handpickList,winH:winH}}"></template>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+        <template is="topcatelog" data="{{categoryList:categoryList.category}}"></template>
+        <template is="band" data="{{list:categoryList.brand}}"></template>
+        <template is="handpick" data="{{handpickList:handpickList,winH:winH}}"></template>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+        <template is="topcatelog" data="{{categoryList:categoryList.category}}"></template>
+        <template is="band" data="{{list:categoryList.brand}}"></template>
+        <template is="handpick" data="{{handpickList:handpickList,winH:winH}}"></template>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winH}}px" bindscrolltolower="loadMore">
+        <template is="topcatelog" data="{{categoryList:categoryList.category}}"></template>
+        <template is="band" data="{{list:categoryList.brand}}"></template>
+        <template is="handpick" data="{{handpickList:handpickList,winH:winH}}"></template>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</scroll-view>

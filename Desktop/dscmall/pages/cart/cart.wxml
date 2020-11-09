@@ -1,0 +1,47 @@
+<view style="height:{{winH}}px" class="goodlist_swiper">
+  <scroll-view scroll-y="true"  style="height:{{winH}}px">
+    <!-- 购物车不为空时 -->
+    <view wx:if="{{goodsList.length >0}}">
+      <view class="goodslist">
+        <view class="goodslist_item" wx:for="{{goodsList}}" wx:key="index">
+          <view class="select" data-index="{{index}}" bindtap="selectFn">
+            <icon type="success_no_circle" wx:if="{{item.isSelect}}"></icon>
+            <icon type="circle" wx:else></icon>
+          </view>
+          <view class="_item">
+            <view class="_item_box">
+              <image src="{{item.goods_thumb}}"></image>
+            </view>
+            <view class="_item_info">
+              <view class="item_title">{{item.goods_name}}</view>
+              <view class="item_else">
+                <view class="item_price">{{item.membership_card_discount_price}}</view>
+                <view class="item_func">
+                  <view class="jian" data-index="{{index}}" bindtap="jianFn">-</view>
+                  <input type="number" value="{{item.detailNum}}" />
+                  <view class="jia" data-index="{{index}}" bindtap="jiaFn">+</view>
+                  <view class="iconfont icon-shoucang sc"></view>
+                  <view class="icontont icon-2 dele" data-index="{{index}}" bindtap="dele"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="cart_footer">
+        <view class="selectall" bindtap="SelectAll">
+          <icon type="success_no_circle" wx:if="{{selectall}}"></icon>
+          <icon type="circle" wx:else></icon>
+          全选
+        </view>
+        <view class="priceall">合计:{{totalprice}}</view>
+        <view class="payall">
+          去结算{{totalnum}}
+        </view>
+      </view>
+    </view>
+    <!-- 购物车为空时 -->
+    <view wx:else></view>
+  </scroll-view>
+
+</view>

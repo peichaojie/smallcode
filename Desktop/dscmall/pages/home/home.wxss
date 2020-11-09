@@ -1,0 +1,3 @@
+/* pages/home/home.wxss */
+@import "../../component/home/home.wxss";
+@import "template/template.wxss";

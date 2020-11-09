@@ -1,0 +1,13 @@
+<template name="band">
+  <view class="band">
+    <view class="band_jx">品牌精选</view>
+    <view class="list">
+      <view class="item" wx:for="{{list}}" wx:key="index">
+        <view class="box">
+          <image src="{{item.brand_logo}}" mode = "aspectFit"></image>
+        </view>
+        <text class="name">{{item.brand_name}}</text>
+      </view>
+    </view>
+  </view>
+</template>

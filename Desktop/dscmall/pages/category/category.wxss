@@ -1,0 +1,124 @@
+/* pages/category/category.wxss */
+@import "../../fonts/iconfont.wxss";
+.cate_header{
+  margin-top: 40rpx;
+  height: 88rpx;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+}
+.cate_icon{
+  line-height: 88rpx;
+  text-align: center;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+}
+.cate_input{
+  width: 85%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cate_in{
+  width: 95%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #ccc;
+}
+.cate_find{
+  width: 88rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  position: absolute;
+  top: 0;
+  right: 30rpx;
+}
+
+.cate_container{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.cate_lists{
+  width: 33.33%;
+  height: 100%;
+}
+.cate_list{
+  height: 76rpx;
+  display: flex;
+  align-items: center;
+}
+.cate_name{
+  border-left: 6rpx solid transparent;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: darkgray;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-indent: 20rpx;
+}
+.cate_list.active .cate_name{
+  color: #f00;
+  border-left: 6rpx solid #f00;
+}
+.cate_list_items{
+  width: 70%;
+  height: 100%;
+}
+.catalog{
+  width: 100%;
+  /* height: 100%; */
+}
+.catalog_ad{
+  height: 193rpx;
+  margin-top: 22rpx;
+  padding: 0 22rpx;
+}
+.catalog_ad image{
+  width: 100%;
+  height: 192rpx;
+}
+.catalog_item{
+  padding: 0 22rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.catalog_title{
+  height: 50rpx;
+  margin: 22rpx 0;
+  font-size: 32rpx;
+  text-align: center;
+  width: 100%;
+}
+.catalog_goods{
+  width: 30%;
+  height: 164rpx;
+  margin-bottom: 60rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.catalog_goods image{
+  width: 104rpx;
+  height: 104rpx;
+}
+.catalog_goods text{
+  height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #888;
+  margin-top: 20rpx;
+}

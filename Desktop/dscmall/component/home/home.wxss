@@ -1,0 +1,33 @@
+@import "../template/swiper.wxss";
+@import "../template/topcatelog.wxss";
+@import "../template/band.wxss";
+@import "../template/skill.wxss";
+@import "../template/fashion_hot.wxss";
+@import "../template/stockpile.wxss";
+@import "../template/handpick.wxss";
+@import "../template/miaosha.wxss";
+@import "../template/booking.wxss";
+.nav-s{
+  height: 88rpx;
+  border-bottom: 2rpx solid #ccc;
+  width: 1280rpx;
+  transition: 0.5s all linear;
+}
+.nav-items{
+  display: inline-block;
+  height: 88rpx;
+  width: 160rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  font-style: "宋体";
+  box-sizing: border-box;
+  border-right: 2rpx solid #efefef;
+}
+.nav-items.active{
+  color: red;
+  font-weight: bold;
+}
+.nav-items:last-child{
+  border-radius: 0;
+}
